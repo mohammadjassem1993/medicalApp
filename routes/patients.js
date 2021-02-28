@@ -6,7 +6,7 @@ const Patient = require('../model/patients.js');
 
 // get all patiants
 router.get('/', async(req, res) => {
-    console.log(req.user)
+    console.log(req.user.id)
     try {
 
         let p = await Patient.find({})

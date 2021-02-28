@@ -19,12 +19,17 @@ process.env.DB,
 
 // import routes
 const verifyToken = require("./routes/verifyjwt");
-
+const loginRoutes = require("./routes/login");
 const userRoutes = require("./routes/users");
 const patientRoutes = require("./routes/patients")
+const labResultsRoutes = require("./routes/labResults")
+
 
 // route middlewares
 app.use(express.json()); // for body parser
-app.use("/api/users", userRoutes);
-app.use("/api/patients",verifyToken, patientRoutes)
+app.use("/api/login", loginRoutes);
+app.use("/api/users",verifyToken, userRoutes);
+app.use("/api/patients",verifyToken, patientRoutes);
+app.use("/api/labResults",verifyToken, labResultsRoutes)
+
 app.listen(3000, () => console.log("server is running..."));
