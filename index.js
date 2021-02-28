@@ -25,6 +25,6 @@ const patientRoutes = require("./routes/patients")
 
 // route middlewares
 app.use(express.json()); // for body parser
-app.use("/api/users",verifyToken, userRoutes);
-app.use("/api/patients", patientRoutes)
+app.use("/api/users", userRoutes);
+app.use("/api/patients",verifyToken, patientRoutes)
 app.listen(3000, () => console.log("server is running..."));

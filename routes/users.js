@@ -40,7 +40,19 @@ const password = await bcrypt.hash(req.body.password, salt);
 
 
 
+// get all users
+router.get('/', async(req, res) => {
+    
+  try {
 
+      let p = await User.find({})
+          res.send(p)
+
+
+  } catch (error) {
+      res.status(400).json({ error });
+  }
+});
 // login route
 router.post("/login", async (req, res) => {
   // validate the user
