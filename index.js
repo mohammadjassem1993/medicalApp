@@ -31,6 +31,6 @@ app.use("/api/login", loginRoutes);
 app.use("/api/users",verifyToken, userRoutes);
 app.use("/api/patients",verifyToken, patientRoutes);
 app.use("/api/labResults",verifyToken, labResultsRoutes);
-app.use("/api/appointments", appointmentRoutes);
+app.use("/api/appointments", verifyToken, appointmentRoutes);
 
 app.listen(3000, () => console.log("server is running..."));

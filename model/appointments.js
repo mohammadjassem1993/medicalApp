@@ -2,11 +2,20 @@ var mongoose = require('mongoose');
 
 // Appointments Schema
 var AppointmentSchema = mongoose.Schema({
-  patient: {
+  patientId: {
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'Patient',
     required: true
   },
+  machineName:{
+		type: String,
+		max: 255
+	},
+	machineId:{
+		type: String,
+		required: true,
+		max: 255
+	},
   channel: {
       type: String,
       required: true

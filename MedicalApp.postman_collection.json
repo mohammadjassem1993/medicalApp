@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f313b883-8f74-4e80-9193-91883b7471b3",
+		"_postman_id": "f4b297bc-2445-4d85-8ab0-ea645f9b3eed",
 		"name": "MedicalApp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -320,6 +320,74 @@
 								"labResults",
 								"id",
 								"603bc9b9cefa950c68de1d9e"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "getAppointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/appointments/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newAppointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient\": \"6032854e1bea66194d2149dc\",\r\n    \"channel\": \"OPD\",\r\n    \"dateAndTime\": \"2021-04-03T13:34:00.000\",\r\n    \"endDateAndTime\": \"2021-04-03T15:34:00.000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/newAppointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"newAppointment"
 							],
 							"query": [
 								{
