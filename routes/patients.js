@@ -4,15 +4,12 @@ const ObjectId = require('mongodb').ObjectID;
 
 const Patient = require('../model/patients.js');
 
-// get all patiants
+// get all patients
 router.get('/', async(req, res) => {
     console.log(req.user.id)
     try {
-
         let p = await Patient.find({})
             res.send(p)
-
-
     } catch (error) {
         res.status(400).json({ error });
     }
@@ -63,8 +60,8 @@ router.get('/name/:patientName', async(req, res) => {
     }
 });
 
+// Create a new patient and add it to the database
 router.post('/register', async(req, res) => {
-    // Create a new patient and add it to the database
     const patient = new Patient({
         patientName: _.capitalize(req.body.patientName),
         gender: req.body.gender,
