@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "f313b883-8f74-4e80-9193-91883b7471b3",
+		"name": "MedicalApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\":\"assemammar2\",\r\n    \"email\":\"assem2@mail.com\",\r\n    \"password\":\"asem3288400\",\r\n    \"role\":[\"admin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQ1Mjg2NDZ9.XykfLq6fx5u66TO2fj8inZVzX9_srAvPbmWQcaUeDuk",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "getAllPatients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								""
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/patients/id/6032854e1bea66194d2149dc?=yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"id",
+								"6032854e1bea66194d2149dc"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "labResults",
+			"item": [
+				{
+					"name": "newResult",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"machineName\":\"assemammar\",\r\n    \"patientId\":\"6032854e1bea66194d2149dc\",\r\n\r\n    \"reportsLinks\":[\"google.com/labresult\",\"google.com/labresult2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/labResults/newResult",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"labResults",
+								"newResult"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllResults",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/labResults/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"labResults",
+								""
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientResult",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/labResults/patient/6032854e1bea66194d2149dc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"labResults",
+								"patient",
+								"6032854e1bea66194d2149dc"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMachineResults",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/labResults/machine/602b66897dd1f326d4a72568",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"labResults",
+								"machine",
+								"602b66897dd1f326d4a72568"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getResult",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/labResults/id/603bc9b9cefa950c68de1d9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"labResults",
+								"id",
+								"603bc9b9cefa950c68de1d9e"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\":\"assem@mail.com\",\r\n    \"password\":\"asem3288400\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQ1Mjg2NDZ9.XykfLq6fx5u66TO2fj8inZVzX9_srAvPbmWQcaUeDuk"
+		}
+	]
+}
