@@ -20,14 +20,14 @@ var AppointmentSchema = mongoose.Schema({
       type: String,
       required: true
   },
-  // referrals: {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: ""
-  // },
-  // diagnosisAndTreatment: {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: ""
-  // },
+  referralId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Referrals"
+  },
+  treatmentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Diagnosis"
+  },
   dateAndTime: { 
       type: Date, 
       required: true 

@@ -112,18 +112,18 @@
 					"response": []
 				},
 				{
-					"name": "getPatient",
+					"name": "getPatientById",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "{{Token}}",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/patients/id/6032854e1bea66194d2149dc?=yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+							"raw": "http://localhost:3000/api/patients/id/6032854e1bea66194d2149dc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -137,8 +137,122 @@
 							],
 							"query": [
 								{
-									"key": "",
-									"value": "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0"
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientByName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/patients/name/Bushra",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"name",
+								"Bushra"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientByNumber",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/patients/number/0561462711",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"number",
+								"0561462711"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerPatient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patientName\": \"Bushra Mahmood\",\n    \"gender\": \"female\",\n    \"emailId\": \"bm2016@hw.ac.uk\",\n    \"phoneNumber\": \"00000000\",\n    \"dateOfBirth\": \"18-02-1997\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/patients/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"register"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
 								}
 							]
 						}
@@ -338,12 +452,76 @@
 			"name": "Appointments",
 			"item": [
 				{
-					"name": "getAppointments",
+					"name": "getAppontments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "localhost:3000/api/appointments/",
+							"raw": "http://localhost:3000/api/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppontmentsWithDate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startDate\": \"2021-04-03\",\n    \"endDate\": \"2021-04-03\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/date",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -351,7 +529,49 @@
 							"path": [
 								"api",
 								"appointments",
-								""
+								"date"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppontmentsWithStatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/status/true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"status",
+								"true"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -370,7 +590,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"patient\": \"6032854e1bea66194d2149dc\",\r\n    \"channel\": \"OPD\",\r\n    \"dateAndTime\": \"2021-04-03T13:34:00.000\",\r\n    \"endDateAndTime\": \"2021-04-03T15:34:00.000\"\r\n}",
+							"raw": "{\r\n    \"patient\": \"6032854e1bea66194d2149dc\",\r\n    \"channel\": \"OPD\",\r\n    \"dateAndTime\": \"2021-03-02T22:19:00.000\",\r\n    \"endDateAndTime\": \"2021-03-02T22:20:00.000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -388,6 +608,85 @@
 								"api",
 								"appointments",
 								"newAppointment"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editAppointment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": false,\n    \"remarks\": \"test 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/id/603e8183a739a06244a3ee66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"id",
+								"603e8183a739a06244a3ee66"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAppointment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/id/603d4f097e884b54b04d59fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"id",
+								"603d4f097e884b54b04d59fa"
 							],
 							"query": [
 								{

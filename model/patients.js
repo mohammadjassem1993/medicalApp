@@ -15,7 +15,7 @@ var PatientSchema = mongoose.Schema({
         type: String,
         required: false
     },
-    emailID: {
+    emailId: {
         type: String,
         required: true,
     	max: 255

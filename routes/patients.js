@@ -65,7 +65,7 @@ router.post('/register', async(req, res) => {
     const patient = new Patient({
         patientName: _.capitalize(req.body.patientName),
         gender: req.body.gender,
-        emailID: req.body.emailID,
+        emailId: req.body.emailId,
         dateOfBirth: req.body.dateOfBirth,
         phoneNumber: req.body.phoneNumber
     });
