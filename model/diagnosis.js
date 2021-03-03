@@ -12,6 +12,11 @@ var DiagnosisSchema = mongoose.Schema({
 		required: true,
 		max: 255
 	},
+	treatmentId:{
+		type: String,
+		required: true,
+		max: 255
+	},
 	createdDate: {
 		type: Date,
 		default: Date.now
