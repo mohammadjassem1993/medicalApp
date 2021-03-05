@@ -13,6 +13,7 @@ router.post('/newDiagnosis', async(req, res) => {
     const d = new Diagnosis({
         diagnosedCondition: req.body.diagnosedCondition,
         prescribedTreatment: req.body.prescribedTreatment,
+        treatmentId: req.body.treatmentId,
         diagnosisLinks: req.body.diagnosisLinks
 
     });
