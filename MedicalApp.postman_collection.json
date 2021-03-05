@@ -702,6 +702,89 @@
 			]
 		},
 		{
+			"name": "Treatments",
+			"item": [
+				{
+					"name": "newDiagnosis",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"diagnosedCondition\": \"test\",\n    \"prescribedTreatment\": \"test\",\n    \"treatmentId\": \"1\",\n    \"diagnosisLinks\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/treatments/newDiagnosis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"treatments",
+								"newDiagnosis"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTreatmentById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/patients/id/6032854e1bea66194d2149dc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"id",
+								"6032854e1bea66194d2149dc"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Login",
 			"request": {
 				"method": "POST",
