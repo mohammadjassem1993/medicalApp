@@ -88,8 +88,10 @@ router.post('/newAppointment', async(req, res) => {
             endDateAndTime: req.body.endDateAndTime,
             remarks: req.body.remarks
         });
+
         const savedAppointment = await appointment.save();
         res.json({ error: null, data: savedAppointment });
+        
     } catch (error) {
         console.log(error);
         res.status(400).json({ error });
