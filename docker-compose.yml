@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  node:
+    container_name: node
+    restart: always
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    volumes:
+      - ./data:/data/db
