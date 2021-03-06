@@ -668,7 +668,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"patient\": \"6032854e1bea66194d2149dc\",\r\n    \"channel\": \"OPD\",\r\n    \"ward\": \"Oncology\",\r\n    \"dateAndTime\": \"2021-03-07T22:19:00.000\",\r\n    \"endDateAndTime\": \"2021-03-07T22:20:00.000\"\r\n}",
+							"raw": "{\r\n    \"patient\": \"6032854e1bea66194d2149dc\",\r\n    \"channel\": \"OPD\",\r\n    \"department\": \"Oncology\",\r\n    \"dateAndTime\": \"2021-03-08T22:19:00.000\",\r\n    \"endDateAndTime\": \"2021-03-08T22:20:00.000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
