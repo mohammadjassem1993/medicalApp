@@ -4,6 +4,7 @@ const ObjectId = require('mongodb').ObjectID;
 
 const Patient = require('../model/patients.js');
 const User = require("../model/user");
+
 const Diagnosis = require('../model/diagnosis.js');
 
 
