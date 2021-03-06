@@ -18,7 +18,8 @@ var AppointmentSchema = mongoose.Schema({
 	},
   channel: {
       type: String,
-      required: true
+      required: true,
+      default: "OPD"
   },
   department: {
     type: String,
