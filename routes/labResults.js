@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectID;
 
 const result = require('../model/labResult.js');
 const Patient = require('../model/patients.js');
-const User = require("../model/User");
+const User = require("../model/user");
 
 
 // get all results
