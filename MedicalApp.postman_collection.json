@@ -112,6 +112,41 @@
 					"response": []
 				},
 				{
+					"name": "deletePatient",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/patients/id/60328bc991b1a31d900b2ec0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"id",
+								"60328bc991b1a31d900b2ec0"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "getPatientById",
 					"request": {
 						"method": "GET",
@@ -218,6 +253,49 @@
 				},
 				{
 					"name": "registerPatient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"patientName\": \"Bushra Mahmood\",\n    \"gender\": \"female\",\n    \"emailId\": \"bm2016@hw.ac.uk\",\n    \"phoneNumber\": \"00000000\",\n    \"dateOfBirth\": \"18-02-1997\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/patients/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patients",
+								"register"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editPatient",
 					"request": {
 						"method": "POST",
 						"header": [

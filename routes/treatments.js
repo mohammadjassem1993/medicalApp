@@ -7,7 +7,6 @@ const User = require("../model/user");
 
 const Diagnosis = require('../model/diagnosis.js');
 
-
 //post Diagnosis result
 router.post('/newDiagnosis', async(req, res) => {
     // Create a new record under diagnosis and Treatment services
@@ -16,7 +15,6 @@ router.post('/newDiagnosis', async(req, res) => {
         prescribedTreatment: req.body.prescribedTreatment,
         treatmentId: req.body.treatmentId,
         diagnosisLinks: req.body.diagnosisLinks
-
     });
     console.log(d);
     try {
