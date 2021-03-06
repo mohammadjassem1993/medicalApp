@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//  Diagnosis Schema
+//  Treatment and Diagnosis Schema
 var DiagnosisSchema = mongoose.Schema({
 	diagnosedCondition: {
 		type: String,
