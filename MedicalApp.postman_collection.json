@@ -759,7 +759,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/patients/id/6032854e1bea66194d2149dc",
+							"raw": "http://localhost:3000/api/treatments/id/6043d3db32de361842a2e692",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -767,9 +767,9 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"patients",
+								"treatments",
 								"id",
-								"6032854e1bea66194d2149dc"
+								"6043d3db32de361842a2e692"
 							],
 							"query": [
 								{
