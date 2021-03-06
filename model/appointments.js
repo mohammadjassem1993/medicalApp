@@ -20,6 +20,10 @@ var AppointmentSchema = mongoose.Schema({
       type: String,
       required: true
   },
+  ward: {
+    type: String,
+    required: true
+  },
   referralId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Referrals"

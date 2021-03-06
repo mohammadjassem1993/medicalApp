@@ -82,16 +82,15 @@ router.post('/newAppointment', async(req, res) => {
             patientId: new ObjectId(req.params.patientId),
             machineId: req.user.id,
             channel: req.body.channel,
+            ward: req.body.ward,
             referralId: req.body.referralId,
             treatmentId: req.body.treatmentId,
             dateAndTime: req.body.dateAndTime,
             endDateAndTime: req.body.endDateAndTime,
             remarks: req.body.remarks
         });
-
         const savedAppointment = await appointment.save();
         res.json({ error: null, data: savedAppointment });
-        
     } catch (error) {
         console.log(error);
         res.status(400).json({ error });
