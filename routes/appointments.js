@@ -82,7 +82,7 @@ router.post('/newAppointment', async(req, res) => {
             patientId: new ObjectId(req.params.patientId),
             machineId: req.user.id,
             channel: req.body.channel,
-            ward: req.body.ward,
+            department: req.body.department,
             referralId: req.body.referralId,
             treatmentId: req.body.treatmentId,
             dateAndTime: req.body.dateAndTime,

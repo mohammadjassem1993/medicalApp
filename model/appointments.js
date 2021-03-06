@@ -20,7 +20,7 @@ var AppointmentSchema = mongoose.Schema({
       type: String,
       required: true
   },
-  ward: {
+  department: {
     type: String,
     required: true
   },
