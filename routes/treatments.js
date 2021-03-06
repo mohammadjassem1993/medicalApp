@@ -27,7 +27,7 @@ router.post('/newDiagnosis', async(req, res) => {
 });
 
 
-//get diagnosis and prescribed treatment by patient id
+//get diagnosis by patient id
 router.get('/id/:id/', async(req, res) => {
     var id = new ObjectId(req.params.id);
     try {
