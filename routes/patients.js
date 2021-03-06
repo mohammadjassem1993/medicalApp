@@ -64,6 +64,7 @@ router.get('/name/:patientName', async(req, res) => {
 router.post('/register', async(req, res) => {
     const patient = new Patient({
         patientName: _.capitalize(req.body.patientName),
+        machineId: req.user.id,
         gender: req.body.gender,
         emailId: req.body.emailId,
         dateOfBirth: req.body.dateOfBirth,
@@ -76,5 +77,51 @@ router.post('/register', async(req, res) => {
         res.status(400).json({ error });
     }
 });
+
+// Delete patient in database using object id
+router.delete('/id/:id', async(req, res) => {
+    try {
+        var id = new ObjectId(req.params.id);
+        var query = { _id: id };
+        const result = await Patient.deleteOne(query);
+        if (result.deletedCount === 1) {
+            res.json({ message: "Successfully deleted 1 document." });
+        } else {
+            res.json({ message: "No documents matched the query. Deleted 0 documents." });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ error });
+    }
+});
+
+// Update patient document using object id
+router.put('/id/:id', async(req, res) => {
+    try {
+        var id = new ObjectId(req.params.id);
+ 
+        var status = ''
+        var updateDoc = {
+            $set: {
+                patientName: _.capitalize(req.body.patientName),
+                machineId: req.user.id,
+                gender: req.body.gender,
+                emailId: req.body.emailId,
+                dateOfBirth: req.body.dateOfBirth,
+                phoneNumber: req.body.phoneNumber
+            },
+        };
+    
+        const result = await Patient.updateOne({_id: id}, updateDoc);
+        if (result.nModified === 1) {
+            res.json({ message: "Successfully updated 1 document." , status: status});
+        } else {
+            res.json({ message: "No documents matched the query. 0 documents modified.", status: status});
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ error });
+    }
+})
 
 module.exports = router;

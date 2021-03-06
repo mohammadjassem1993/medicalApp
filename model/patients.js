@@ -7,6 +7,11 @@ var PatientSchema = mongoose.Schema({
 		required: true,
 		max: 255
 	},
+	machineId:{
+		type: String,
+		required: true,
+		max: 255
+	},
 	dateOfBirth: {
 		type: String,
 		required: false
