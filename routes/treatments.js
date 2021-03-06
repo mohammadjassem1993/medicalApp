@@ -3,7 +3,7 @@ const _ = require('lodash');
 const ObjectId = require('mongodb').ObjectID;   
 
 const Patient = require('../model/patients.js');
-const User = require("../model/user");
+const User = require("../model/User");
 const Diagnosis = require('../model/diagnosis.js');
 
 
@@ -43,6 +43,22 @@ router.get('/id/:id/', async(req, res) => {
         res.status(400).json({ error });
     }
 });
+
+// get appointments based on prescribed treatment name
+router.get('/treatment/:prescribedTreatment', async(req, res) => {
+    var prescribedTreatment = req.params.prescribedTreatment;
+    try {
+        let treatment = await Diagnosis.find({prescribedTreatment: {"$regex": prescribedTreatment, "$options": "i"}})
+        if (treatment) {
+            res.send(treatment)
+        } else {
+            res.send("This Treatment does not exist for the patient")
+        }
+    } catch (error) {
+        res.status(400).json({ error });
+    }
+});
+
 
 
 
