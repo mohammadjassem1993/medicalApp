@@ -7,6 +7,12 @@ const Diagnosis = require('../model/diagnosis.js');
 
 //post Diagnosis result
 router.post('/newDiagnosis', async(req, res) => {
+     // authorize the user roles
+     let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+     if(!a){
+         res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+     }
     // Create a new record under diagnosis and Treatment services
     const d = new Diagnosis({
         diagnosedCondition: req.body.diagnosedCondition,
@@ -26,6 +32,12 @@ router.post('/newDiagnosis', async(req, res) => {
 
 //get diagnosis by patient id
 router.get('/id/:id/', async(req, res) => {
+     // authorize the user roles
+     let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+     if(!a){
+         res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+     }
     var id = new ObjectId(req.params.id);
     try {
         let d = await Diagnosis.findById(id)
@@ -43,6 +55,12 @@ router.get('/id/:id/', async(req, res) => {
 
 // get appointments based on prescribed treatment name
 router.get('/treatment/:prescribedTreatment', async(req, res) => {
+     // authorize the user roles
+     let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+     if(!a){
+         res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+     }
     var prescribedTreatment = req.params.prescribedTreatment;
     try {
         let treatment = await Diagnosis.find({prescribedTreatment: {"$regex": prescribedTreatment, "$options": "i"}})
