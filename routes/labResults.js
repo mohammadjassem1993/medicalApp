@@ -156,13 +156,7 @@ router.put('/id/:id/comment', async(req, res) => {
 router.get('/patient/:id/', async(req, res) => {
 
 
-          //autorize the user roles should be admin or radiology or doctor or nurse
-  let a =await authorize(req.user.id,['admin','doctor','nurse','radiology']);
-
-  if(!a){
-    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
-  }
-
+    
     var id = new ObjectId(req.params.id);
     
     try { //the machine is registerd as a user
