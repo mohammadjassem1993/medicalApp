@@ -927,13 +927,13 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "{{Token}}",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"machineName\":\"assemammar\",\r\n    \"patientId\":\"6032854e1bea66194d2149dc\",\r\n\r\n    \"reportsLinks\":[\"google.com/labresult\",\"google.com/labresult2\"]\r\n}",
+							"raw": "{\r\n\r\n    \"machineName\":\"Xray\",\r\n    \"patientId\":\"603e8c493bde1767fafd7fde\",\r\n\r\n    \"reportsLinks\":[\"serverroom:9080/labresult\",\"serverroom:9080/labresult2\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -961,7 +961,162 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "newResult",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "{{Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"machineName\":\"Xray\",\r\n    \"patientId\":\"603e8c493bde1767fafd7fde\",\r\n\r\n    \"reportsLinks\":[\"serverroom:9080/labresult\",\"serverroom:9080/labresult2\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/newResult",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"newResult"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "274"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"112-R5+BMW1hB5Lmq012B73F48vaMOg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:42:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"6044f47d30ffcd1e34caa0cb\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-07T15:42:53.712Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "newResult",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"machineName\":\"Xray\",\r\n    \"patientId\":\"603e8c493bde1767fafd7fde\",\r\n\r\n    \"reportsLinks\":[\"serverroom:9080/labresult\",\"serverroom:9080/labresult2\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/newResult",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"newResult"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-SeikBXwc2Nnj+zWhh1hXE/sh4TI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:48:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": {\n        \"reportsLinks\": [\n            \"serverroom:9080/labresult\",\n            \"serverroom:9080/labresult2\"\n        ],\n        \"_id\": \"6044f5da30ffcd1e34caa0cc\",\n        \"machineName\": \"Xray\",\n        \"patientId\": \"603e8c493bde1767fafd7fde\",\n        \"machineId\": \"6044e749bc9d491a00209608\",\n        \"createdDate\": \"2021-03-07T15:48:42.495Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "getAllResults",
@@ -995,7 +1150,144 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getAllResults",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										""
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "760"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f8-zEDXkuWdL2SNW911T3ySoY7D5dU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:44:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"603bc9b9cefa950c68de1d9e\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-02-28T16:50:01.729Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"603d4e81e462e553ab04d655\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-01T20:28:49.877Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"6044f47d30ffcd1e34caa0cb\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-07T15:42:53.712Z\",\n        \"__v\": 0\n    }\n]"
+						},
+						{
+							"name": "getAllResults",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										""
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1017"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3f9-jNvDXBWOoXgwT9k+VPnV1zTh2Ww\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:48:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"603bc9b9cefa950c68de1d9e\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-02-28T16:50:01.729Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"603d4e81e462e553ab04d655\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-01T20:28:49.877Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"6044f47d30ffcd1e34caa0cb\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-07T15:42:53.712Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"serverroom:9080/labresult\",\n            \"serverroom:9080/labresult2\"\n        ],\n        \"_id\": \"6044f5da30ffcd1e34caa0cc\",\n        \"machineName\": \"Xray\",\n        \"patientId\": \"603e8c493bde1767fafd7fde\",\n        \"machineId\": \"6044e749bc9d491a00209608\",\n        \"createdDate\": \"2021-03-07T15:48:42.495Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "getPatientResult",
@@ -1030,7 +1322,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getPatientResult",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/patient/6032854e1bea66194d2149dc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"patient",
+										"6032854e1bea66194d2149dc"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "760"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f8-zEDXkuWdL2SNW911T3ySoY7D5dU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:44:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"603bc9b9cefa950c68de1d9e\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-02-28T16:50:01.729Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"603d4e81e462e553ab04d655\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-01T20:28:49.877Z\",\n        \"__v\": 0\n    },\n    {\n        \"reportsLinks\": [\n            \"google.com/labresult\",\n            \"google.com/labresult2\"\n        ],\n        \"_id\": \"6044f47d30ffcd1e34caa0cb\",\n        \"machineName\": \"Assemammar\",\n        \"patientId\": \"6032854e1bea66194d2149dc\",\n        \"machineId\": \"602b66897dd1f326d4a72568\",\n        \"createdDate\": \"2021-03-07T15:42:53.712Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "getMachineResults",
@@ -1044,7 +1406,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/labResults/machine/602b66897dd1f326d4a72568",
+							"raw": "http://localhost:3000/api/labResults/machine/6044e749bc9d491a00209608",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1054,7 +1416,7 @@
 								"api",
 								"labResults",
 								"machine",
-								"602b66897dd1f326d4a72568"
+								"6044e749bc9d491a00209608"
 							],
 							"query": [
 								{
@@ -1065,7 +1427,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getMachineResults",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/machine/6044e749bc9d491a00209608",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"machine",
+										"6044e749bc9d491a00209608"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-dfizq2NFmM6nq8krnll0OI3u5vw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:50:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reportsLinks\": [\n            \"serverroom:9080/labresult\",\n            \"serverroom:9080/labresult2\"\n        ],\n        \"_id\": \"6044f5da30ffcd1e34caa0cc\",\n        \"machineName\": \"Xray\",\n        \"patientId\": \"603e8c493bde1767fafd7fde\",\n        \"machineId\": \"6044e749bc9d491a00209608\",\n        \"createdDate\": \"2021-03-07T15:48:42.495Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "getResult",
@@ -1079,7 +1511,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/labResults/id/603bc9b9cefa950c68de1d9e",
+							"raw": "http://localhost:3000/api/labResults/id/6044f5da30ffcd1e34caa0cc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1089,7 +1521,7 @@
 								"api",
 								"labResults",
 								"id",
-								"603bc9b9cefa950c68de1d9e"
+								"6044f5da30ffcd1e34caa0cc"
 							],
 							"query": [
 								{
@@ -1100,7 +1532,271 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getResult",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/id/6044f5da30ffcd1e34caa0cc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"id",
+										"6044f5da30ffcd1e34caa0cc"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "270"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10e-yPuJwc6eE3H8/tGSfOV0hllxtUw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:58:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reportsLinks\": [\n        \"serverroom:9080/labresult\",\n        \"serverroom:9080/labresult2\"\n    ],\n    \"comments\": [],\n    \"_id\": \"6044f5da30ffcd1e34caa0cc\",\n    \"machineName\": \"Xray\",\n    \"patientId\": \"603e8c493bde1767fafd7fde\",\n    \"machineId\": \"6044e749bc9d491a00209608\",\n    \"createdDate\": \"2021-03-07T15:48:42.495Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "getResult",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/id/6044f5da30ffcd1e34caa0cc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"id",
+										"6044f5da30ffcd1e34caa0cc"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "320"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"140-G4VxHFDVS5qFWeqDe+4flAVO/+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 16:05:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reportsLinks\": [\n        \"serverroom:9080/labresult\",\n        \"serverroom:9080/labresult2\"\n    ],\n    \"comments\": [\n        \"that is a very white bone\",\n        \"that is a white bone\"\n    ],\n    \"_id\": \"6044f5da30ffcd1e34caa0cc\",\n    \"machineName\": \"Xray\",\n    \"patientId\": \"603e8c493bde1767fafd7fde\",\n    \"machineId\": \"6044e749bc9d491a00209608\",\n    \"createdDate\": \"2021-03-07T15:48:42.495Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "add comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"comments\":[\"that is a very white bone\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/labResults/id/6044f5da30ffcd1e34caa0cc/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"labResults",
+								"id",
+								"6044f5da30ffcd1e34caa0cc",
+								"comment"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "{{Token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add comment",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQwMDc2OTN9.2HWNSK8Zm7EIVCkhX4xah4hNJ0zEodfQ4bblsm3fzS0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"comments\":[\"that is a very white bone\"]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/labResults/id/6044f5da30ffcd1e34caa0cc/comment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"labResults",
+										"id",
+										"6044f5da30ffcd1e34caa0cc",
+										"comment"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "{{Token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-scuk3GVv/ekcbpYBU40YYEt1/rs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 16:04:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": \"comments added\"\n}"
+						}
+					]
 				}
 			]
 		},

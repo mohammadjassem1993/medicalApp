@@ -25,7 +25,12 @@ var ResultSchema = mongoose.Schema({
 	reportsLinks:[ {  //contains links to the Xray Images or pdf reports
 		type: String,
 	
+	  }],
+	  comments:[ {  //contains links to the Xray Images or pdf reports
+		type: String,
+	
 	  }]
+
 
 });
 

@@ -79,6 +79,49 @@ router.get('/machine/:id/', async(req, res) => {
 });
 
 
+//add comment
+router.put('/id/:id/comment', async(req, res) => {
+    try{
+  
+          var id = new ObjectId(req.params.id);
+          var comements = req.body.comments;
+  
+    
+    
+    
+          let resu = await result.findById(id)
+          if (!resu)  {
+              res.send("result does not exist")
+          }
+          console.log(comements);
+          comements=comements.concat(resu.comments);
+          console.log(comements);
+
+          result.updateOne({_id: id}, {$set: {comments: comements}}
+        , function(err, affected, resp) {
+    
+          res.json({ error: err, data: "comments added" });
+        })
+      } catch(error){
+        console.log(error)
+        res.status(400).json({ error });
+      }
+    })
+  
+  //get one user
+  router.get('/id/:id', async(req, res) => {
+    var id = new ObjectId(req.params.id);
+    try {
+        let user = await User.findById(id)
+        if (user) {
+            res.send(user)
+        } else {
+            res.send("User does not exist")
+        }
+    } catch (error) {
+        res.status(400).json({ error });
+    }
+  });
 
 // Get all results for one patient
 router.get('/patient/:id/', async(req, res) => {
