@@ -6,6 +6,13 @@ const Appointment = require('../model/appointments.js');
 
 // Get all appointments
 router.get('/', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    }
+
     try {
         let p = await Appointment.find({});
         res.send(p);
@@ -17,6 +24,13 @@ router.get('/', async(req, res) => {
 
 // Search appointment in database using object id
 router.get('/id/:id', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    }
+
     var id = new ObjectId(req.params.id);
     try {
         let appointment = await Appointment.findById(id)
@@ -32,6 +46,13 @@ router.get('/id/:id', async(req, res) => {
 
 // Search appointment in database using fulfilment status
 router.get('/status/:status', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    }
+
     var status = req.params.status;
     var bool;
 
@@ -52,6 +73,13 @@ router.get('/status/:status', async(req, res) => {
 
 // Search appointment in database using date restrictions
 router.get('/date', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    }
+
     try {
         var startDate = req.body.startDate;
         var endDate = req.body.endDate;
@@ -77,6 +105,13 @@ router.get('/date', async(req, res) => {
 
 // Create a new patient and add it to the database
 router.post('/newAppointment', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    }
+
     try {
         const appointment = new Appointment({
             patientId: new ObjectId(req.params.patientId),
@@ -99,6 +134,13 @@ router.post('/newAppointment', async(req, res) => {
 
 // Delete appointment in database using object id
 router.delete('/id/:id', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    }
+
     try {
         var id = new ObjectId(req.params.id);
         var query = { _id: id };
@@ -116,6 +158,13 @@ router.delete('/id/:id', async(req, res) => {
 
 // Update appointment document using object id
 router.put('/id/:id', async(req, res) => {
+    // authorize the user roles
+    let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
+
+    if(!a){
+        res.status(401).json({ error: 'Unauthorized, This action will be reported to an admin' })
+    } 
+    
     try {
         var id = new ObjectId(req.params.id);
         let appointment = await Appointment.findById(id)
