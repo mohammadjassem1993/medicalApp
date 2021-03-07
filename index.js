@@ -25,6 +25,7 @@ const patientRoutes = require("./routes/patients")
 const labResultsRoutes = require("./routes/labResults")
 const appointmentRoutes = require("./routes/appointments")
 const treatmentRoutes = require("./routes/treatments")
+const referralRoutes = require("./routes/referrals");
 
 // route middlewares
 app.use(express.json()); // for body parser
@@ -34,5 +35,6 @@ app.use("/api/patients",verifyToken, patientRoutes);
 app.use("/api/labResults",verifyToken, labResultsRoutes);
 app.use("/api/appointments", verifyToken, appointmentRoutes);
 app.use("/api/treatments/", verifyToken, treatmentRoutes);
+app.use("/api/referrals/", referralRoutes);
 
 app.listen(3000, () => console.log("server is running..."));
