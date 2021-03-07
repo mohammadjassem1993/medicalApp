@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f4b297bc-2445-4d85-8ab0-ea645f9b3eed",
+		"_postman_id": "87c5accc-1c0d-4651-bfc1-bc9655d400d2",
 		"name": "MedicalApp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,10 +12,16 @@
 					"name": "Register",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjgzMzF9.6qLqhGQJSPfJyzttVSb3h0PMdgMZBxGnDLEdaKxSFys",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"name\":\"assemammar2\",\r\n    \"email\":\"assem2@mail.com\",\r\n    \"password\":\"asem3288400\",\r\n    \"role\":[\"admin\"]\r\n}",
+							"raw": "{\r\n\r\n    \"name\":\"admin_1\",\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\",\r\n    \"role\":[\"admin\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -36,7 +42,405 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjgzMzF9.6qLqhGQJSPfJyzttVSb3h0PMdgMZBxGnDLEdaKxSFys",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"name\":\"admin_1\",\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\",\r\n    \"role\":[\"admin\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e7-yhxGwq4kkq42ACPTDVcokpcf1GQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 14:46:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": {\n        \"role\": [\n            \"admin\"\n        ],\n        \"_id\": \"6044e749bc9d491a00209608\",\n        \"name\": \"admin_1\",\n        \"email\": \"admin@mail.com\",\n        \"password\": \"$2b$10$k6BeD2vkWyZVV5JIcpR7IuDOzzFbaISHQieCd8J9GCNVbn2.GgS0C\",\n        \"date\": \"2021-03-07T14:46:33.393Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update roles",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjgzMzF9.6qLqhGQJSPfJyzttVSb3h0PMdgMZBxGnDLEdaKxSFys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\r\n    \"role\":[\"admin\",\"Radiology\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/updateroles/id/6044dc62437c9a11a9627103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"updateroles",
+								"id",
+								"6044dc62437c9a11a9627103"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update roles",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjgzMzF9.6qLqhGQJSPfJyzttVSb3h0PMdgMZBxGnDLEdaKxSFys",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\r\n    \"role\":[\"admin\",\"Radiology\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/updateroles/id/6044dc62437c9a11a9627103",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"updateroles",
+										"id",
+										"6044dc62437c9a11a9627103"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-0jpx3XfqIoCUNp/JJjE2SpULUZo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:36:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": \"roles changed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\r\n    \"oldpassword\":\"deficultpassword\",\r\n    \"newpassword\":\"moredeficultpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/updatepass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"updatepass"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\r\n    \"oldpassword\":\"deficultpassword\",\r\n    \"newpassword\":\"moredeficultpassword\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/updatepass",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"updatepass"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-/x7j1GxmpbVesrpJa2IDF3sJwBA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:24:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": \"password changed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjgzMzF9.6qLqhGQJSPfJyzttVSb3h0PMdgMZBxGnDLEdaKxSFys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\":\"admin_1\",\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\",\r\n    \"role\":[\"admin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/id/602b66897dd1f326d4a72568",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"id",
+								"602b66897dd1f326d4a72568"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjgzMzF9.6qLqhGQJSPfJyzttVSb3h0PMdgMZBxGnDLEdaKxSFys",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"name\":\"admin_1\",\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\",\r\n    \"role\":[\"admin\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/id/602b66897dd1f326d4a72568",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"id",
+										"602b66897dd1f326d4a72568"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-TzEQ4FtFr+RRRPlAph4MDIVJUx0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 15:30:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": \"user deleted\"\n}"
+						}
+					]
 				},
 				{
 					"name": "getUsers",
@@ -64,13 +468,187 @@
 							"query": [
 								{
 									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "{{Token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										""
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "854"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"356-DHGLDC1Bog8wMHNAseJGIQz4CrE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 14:50:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"role\": [\n            \"admin\"\n        ],\n        \"_id\": \"602b66897dd1f326d4a72568\",\n        \"name\": \"assemammar\",\n        \"email\": \"assem@mail.com\",\n        \"password\": \"$2b$10$TW.mhAf9gGkPIVZL5q20SenMQ2dMPG5W96NoXAsJG2kWdevnZOIW.\",\n        \"date\": \"2021-02-16T06:30:33.126Z\",\n        \"__v\": 0\n    },\n    {\n        \"role\": [\n            \"admin\"\n        ],\n        \"_id\": \"603bc09aa3f08a2ab833c8c3\",\n        \"name\": \"assemammar2\",\n        \"email\": \"assem2@mail.com\",\n        \"password\": \"$2b$10$nIpwtcFfF2tjR.4XvxYYAepWMgFHl5yOo.Y/xVc2.m9pS/VFuyAKe\",\n        \"date\": \"2021-02-28T16:11:06.658Z\",\n        \"__v\": 0\n    },\n    {\n        \"role\": [\n            \"Radiology\"\n        ],\n        \"_id\": \"6044dc62437c9a11a9627103\",\n        \"name\": \"mohammad\",\n        \"email\": \"mja13@hw.ac.uk\",\n        \"password\": \"$2b$10$EpmTO/G4C9I124u/dOv85ur3Zb3FLD5FNRwME69JvKVNKV1NdDT3C\",\n        \"date\": \"2021-03-07T14:00:02.604Z\",\n        \"__v\": 0\n    },\n    {\n        \"role\": [\n            \"admin\"\n        ],\n        \"_id\": \"6044e749bc9d491a00209608\",\n        \"name\": \"admin_1\",\n        \"email\": \"admin@mail.com\",\n        \"password\": \"$2b$10$k6BeD2vkWyZVV5JIcpR7IuDOzzFbaISHQieCd8J9GCNVbn2.GgS0C\",\n        \"date\": \"2021-03-07T14:46:33.393Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/id/6044dc62437c9a11a9627103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"id",
+								"6044dc62437c9a11a9627103"
+							],
+							"query": [
+								{
+									"key": "auth-token",
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQ1Mjg2NDZ9.XykfLq6fx5u66TO2fj8inZVzX9_srAvPbmWQcaUeDuk",
 									"disabled": true
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "{{Token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/users/id/603bc09aa3f08a2ab833c8c3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"id",
+										"603bc09aa3f08a2ab833c8c3"
+									],
+									"query": [
+										{
+											"key": "auth-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXNzZW1hbW1hciIsImlkIjoiNjAyYjY2ODk3ZGQxZjMyNmQ0YTcyNTY4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTQ1Mjg2NDZ9.XykfLq6fx5u66TO2fj8inZVzX9_srAvPbmWQcaUeDuk",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-3qLWQ50CWU/C+KxCAoks727R87I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Mar 2021 14:55:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"role\": [\n        \"admin\"\n    ],\n    \"_id\": \"603bc09aa3f08a2ab833c8c3\",\n    \"name\": \"assemammar2\",\n    \"email\": \"assem2@mail.com\",\n    \"password\": \"$2b$10$nIpwtcFfF2tjR.4XvxYYAepWMgFHl5yOo.Y/xVc2.m9pS/VFuyAKe\",\n    \"date\": \"2021-02-28T16:11:06.658Z\",\n    \"__v\": 0\n}"
+						}
+					]
 				}
 			]
 		},
@@ -869,7 +1447,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n    \"email\":\"assem@mail.com\",\r\n    \"password\":\"asem3288400\"\r\n}",
+					"raw": "{\r\n\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -889,7 +1467,138 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "auth-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "227"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e3-1yZEufo+XtoFQqr+KDPkbVVKxbY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Mar 2021 14:49:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": null,\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW5fMSIsImlkIjoiNjA0NGU3NDliYzlkNDkxYTAwMjA5NjA4Iiwicm9sZSI6WyJhZG1pbiJdLCJpYXQiOjE2MTUxMjg1NTJ9.0lXWllqhkyAPMPksO1Jtz7SMXZvL-VQ44DaCLPSevSw\"\n    }\n}"
+				},
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"deficultpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-BKjGfeQjM7GiDCNfrxp/A/oJaIM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Mar 2021 15:24:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Password is wrong\"\n}"
+				}
+			]
 		}
 	],
 	"variable": [
