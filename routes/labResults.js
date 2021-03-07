@@ -10,6 +10,13 @@ const User = require("../model/user");
 // get all results
 router.get('/', async(req, res) => {
 
+      //autorize the user roles should be admin or radiology or doctor or nurse
+  let a =await authorize(req.user.id,['admin','doctor','nurse','radiology']);
+
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
+
     try {
 
         let p = await result.find({})
@@ -26,6 +33,17 @@ router.get('/', async(req, res) => {
 
 //post test result
 router.post('/newResult', async(req, res) => {
+
+      //autorize the user roles should be admin or machine
+      let a =await authorize(req.user.id,['admin','machine']);
+
+      if(!a){
+        res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+      }
+    
+
+
+
     // Create a new lab result record
     const r = new result({
         machineName: _.capitalize(req.body.machineName),
@@ -46,6 +64,14 @@ router.post('/newResult', async(req, res) => {
 
 //get report by id
 router.get('/id/:id/', async(req, res) => {
+
+          //autorize the user roles should be admin or radiology or doctor or nurse
+  let a =await authorize(req.user.id,['admin','doctor','nurse','radiology']);
+
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
+
     var id = new ObjectId(req.params.id);
     try {
         let r = await result.findById(id)
@@ -63,6 +89,15 @@ router.get('/id/:id/', async(req, res) => {
 
 // Get all results for one machine
 router.get('/machine/:id/', async(req, res) => {
+
+
+          //autorize the user roles should be admin or radiology or doctor or nurse
+  let a =await authorize(req.user.id,['admin','doctor','nurse','radiology']);
+
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
+
     var id = new ObjectId(req.params.id);
     
     try { //the machine is registerd as a user
@@ -82,6 +117,15 @@ router.get('/machine/:id/', async(req, res) => {
 //add comment
 router.put('/id/:id/comment', async(req, res) => {
     try{
+
+
+              //autorize the user roles should be admin or radiology or doctor or nurse
+  let a =await authorize(req.user.id,['admin','doctor','nurse','radiology']);
+
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
+
   
           var id = new ObjectId(req.params.id);
           var comements = req.body.comments;
@@ -107,24 +151,18 @@ router.put('/id/:id/comment', async(req, res) => {
         res.status(400).json({ error });
       }
     })
-  
-  //get one user
-  router.get('/id/:id', async(req, res) => {
-    var id = new ObjectId(req.params.id);
-    try {
-        let user = await User.findById(id)
-        if (user) {
-            res.send(user)
-        } else {
-            res.send("User does not exist")
-        }
-    } catch (error) {
-        res.status(400).json({ error });
-    }
-  });
 
 // Get all results for one patient
 router.get('/patient/:id/', async(req, res) => {
+
+
+          //autorize the user roles should be admin or radiology or doctor or nurse
+  let a =await authorize(req.user.id,['admin','doctor','nurse','radiology']);
+
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
+
     var id = new ObjectId(req.params.id);
     
     try { //the machine is registerd as a user

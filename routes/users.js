@@ -3,13 +3,22 @@ const User = require("../model/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const ObjectId = require('mongodb').ObjectID;   
-
+const authorize = require('./authorize')
 
 
 // validation
 const  {registerValidation}= require("../validation");
 router.post("/register", async (req, res) => {
   // validate the user
+
+  //autorize the user roles should be admin
+  let a =await authorize(req.user.id,['admin']);
+  console.log(a)
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
+
+
   const { error } = registerValidation(req.body);
 
 
@@ -43,6 +52,13 @@ const password = await bcrypt.hash(req.body.password, salt);
 router.get('/id/:id', async(req, res) => {
   var id = new ObjectId(req.params.id);
   try {
+
+      //autorize the user roles should be admin
+  let a =await authorize(req.user.id,['admin']);
+  console.log(a)
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
       let user = await User.findById(id)
       if (user) {
           res.send(user)
@@ -96,6 +112,13 @@ try{
 router.put('/updateroles/id/:id', async(req, res) => {
   try{
 
+
+      //autorize the user roles should be admin
+  let a =await authorize(req.user.id,['admin']);
+  console.log(a)
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
         var id = new ObjectId(req.params.id);
 
   
@@ -117,6 +140,13 @@ router.put('/updateroles/id/:id', async(req, res) => {
 router.get('/id/:id', async(req, res) => {
   var id = new ObjectId(req.params.id);
   try {
+
+      //autorize the user roles should be admin
+  let a =await authorize(req.user.id,['admin']);
+  console.log(a)
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
       let user = await User.findById(id)
       if (user) {
           res.send(user)
@@ -131,6 +161,16 @@ router.get('/id/:id', async(req, res) => {
 //delete user
 router.delete('/id/:id', async(req, res) => {
 try{
+
+
+    //autorize the user roles should be admin
+    let a =await authorize(req.user.id,['admin']);
+    console.log(a)
+    if(!a){
+      res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+    }
+
+
 
       var id = new ObjectId(req.user.id);
 
@@ -150,6 +190,13 @@ try{
 router.get('/', async(req, res) => {
     
   try {
+
+      //autorize the user roles should be admin
+  let a =await authorize(req.user.id,['admin']);
+  console.log(a)
+  if(!a){
+    res.status(401).json({ error: 'UnAuthorized, This Action will be reported to an admin' })
+  }
 
       let p = await User.find({})
           res.send(p)
