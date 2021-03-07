@@ -2,9 +2,7 @@ const router = require("express").Router();
 const _ = require('lodash');
 const ObjectId = require('mongodb').ObjectID;   
 
-const Patient = require('../model/patients.js');
-const User = require("../model/user");
-
+const Appointment = require('../model/appointments.js');
 const Diagnosis = require('../model/diagnosis.js');
 
 //post Diagnosis result
@@ -49,7 +47,7 @@ router.get('/treatment/:prescribedTreatment', async(req, res) => {
     try {
         let treatment = await Diagnosis.find({prescribedTreatment: {"$regex": prescribedTreatment, "$options": "i"}})
         if (treatment) {
-            res.send(treatment)
+            res.send(Appointment)
         } else {
             res.send("This Treatment does not exist for the patient")
         }
