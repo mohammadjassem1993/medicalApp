@@ -7,7 +7,7 @@ const Diagnosis = require('../model/diagnosis.js');
 
 //post Diagnosis result
 router.post('/newDiagnosis', async(req, res) => {
-     // authorize the user roles
+     // authorize user roles
      let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
 
      if(!a){
@@ -32,7 +32,7 @@ router.post('/newDiagnosis', async(req, res) => {
 
 //get diagnosis by patient id
 router.get('/id/:id/', async(req, res) => {
-     // authorize the user roles
+     // authorize user roles
      let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
 
      if(!a){
@@ -55,7 +55,7 @@ router.get('/id/:id/', async(req, res) => {
 
 // get appointments based on prescribed treatment name
 router.get('/treatment/:prescribedTreatment', async(req, res) => {
-     // authorize the user roles
+     // authorize user roles
      let a =await authorize(req.user.id,['admin','clerk','doctor','nurse','paramedic']);
 
      if(!a){
